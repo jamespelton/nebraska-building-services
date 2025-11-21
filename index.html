@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nebraska Building Services - Professional building services, construction, maintenance, and repairs in Lincoln and Roca, NE. Family-owned business with honest, upfront pricing and quality workmanship.">
-    <meta name="keywords" content="building services, construction, building maintenance, repairs, renovations, Lincoln NE, Roca NE, Nebraska construction">
-    <title>Professional Building Services in Lincoln, Nebraska | Nebraska Building Services</title>
+    <meta name="description" content="Crawford Plumbing - Expert plumbing services in Omaha, NE. Fast, reliable, and professional. Call (402) 525-8599 for 24/7 emergency plumbing service.">
+    <meta name="keywords" content="plumbing, Omaha plumbing, emergency plumber, water heater, drain cleaning, leak repair, Crawford Plumbing, Nebraska plumber">
+    <title>Crawford Plumbing | Expert Plumbing Services in Omaha, NE | (402) 525-8599</title>
     <style>
         * {
             margin: 0;
@@ -14,16 +14,19 @@
         }
 
         :root {
-            --navy: #1a365d;
-            --orange: #f97316;
-            --light-bg: #f8f9fa;
+            --navy: #0f2a4a;
+            --blue: #1e4d7b;
+            --light-blue: #3a6ea5;
+            --orange: #ff6b35;
+            --orange-hover: #e85a2a;
+            --light-bg: #f7f9fc;
             --dark-gray: #2d3748;
-            --light-gray: #718096;
+            --light-gray: #64748b;
             --white: #ffffff;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: var(--dark-gray);
             overflow-x: hidden;
@@ -35,13 +38,25 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--navy) 0%, #2c4d7a 100%);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
             color: var(--white);
-            padding: 1.2rem 0;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.5s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .header-container {
@@ -51,19 +66,32 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
         }
 
         .logo {
-            font-size: 1.6rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
             color: var(--white);
             text-decoration: none;
             letter-spacing: -0.5px;
-            transition: opacity 0.3s;
+            transition: transform 0.3s;
         }
 
         .logo:hover {
-            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .logo-tagline {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 400;
         }
 
         nav {
@@ -75,13 +103,25 @@
         nav a {
             color: var(--white);
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s;
             font-weight: 500;
             font-size: 0.95rem;
+            position: relative;
         }
 
-        nav a:hover {
-            color: var(--orange);
+        nav a:not(.call-btn)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: width 0.3s;
+        }
+
+        nav a:not(.call-btn):hover::after {
+            width: 100%;
         }
 
         .call-btn {
@@ -93,13 +133,23 @@
             font-weight: 700;
             transition: all 0.3s;
             white-space: nowrap;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(255, 107, 53, 0.6);
+            }
         }
 
         .call-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
-            background: #ea6a0a;
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
+            background: var(--orange-hover);
         }
 
         .mobile-menu-toggle {
@@ -114,8 +164,11 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
-            padding: 120px 20px;
+            background: linear-gradient(135deg, rgba(15, 42, 74, 0.95) 0%, rgba(30, 77, 123, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230f2a4a" width="1200" height="600"/><path d="M0 300L50 280L100 320L150 290L200 310L250 270L300 320L350 280L400 330L450 290L500 310L550 280L600 320L650 290L700 310L750 280L800 320L850 290L900 310L950 280L1000 320L1050 290L1100 310L1150 280L1200 320V600H0Z" fill="%231e4d7b" opacity="0.3"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 140px 20px 120px;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -128,7 +181,8 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="%231a365d" opacity="0.02"/></svg>') repeat;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(58, 110, 165, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
@@ -137,21 +191,55 @@
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 107, 53, 0.2);
+            color: var(--orange);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--orange);
+            animation: fadeIn 1s ease-out 0.3s both;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 1.5rem;
-            color: var(--navy);
-            font-weight: 800;
-            line-height: 1.2;
+            color: var(--white);
+            font-weight: 900;
+            line-height: 1.1;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out 0.2s both;
         }
 
         .hero .subheadline {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 2.5rem;
-            color: var(--light-gray);
+            color: rgba(255, 255, 255, 0.95);
             font-weight: 500;
+            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .trust-badges {
@@ -160,19 +248,25 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-top: 3rem;
+            animation: fadeInUp 1s ease-out 0.8s both;
         }
 
         .trust-badge {
             display: flex;
             align-items: center;
             gap: 0.7rem;
-            color: var(--dark-gray);
+            color: var(--white);
             font-weight: 600;
             font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .trust-badge .check {
-            color: #10b981;
+            color: var(--orange);
             font-size: 1.4rem;
             font-weight: bold;
         }
@@ -182,14 +276,15 @@
             gap: 1.2rem;
             justify-content: center;
             flex-wrap: wrap;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
         .btn-primary, .btn-secondary {
-            padding: 1.1rem 2.5rem;
+            padding: 1.2rem 2.8rem;
             border-radius: 35px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             transition: all 0.3s;
             display: inline-block;
         }
@@ -197,26 +292,27 @@
         .btn-primary {
             background: var(--orange);
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
-            background: #ea6a0a;
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
+            background: var(--orange-hover);
         }
 
         .btn-secondary {
-            background: var(--white);
-            color: var(--navy);
-            border: 2px solid var(--navy);
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--white);
+            border: 2px solid var(--white);
+            backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: var(--navy);
-            color: var(--white);
+            background: var(--white);
+            color: var(--navy);
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(26, 54, 93, 0.3);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
         }
 
         /* Section Styles */
@@ -236,6 +332,7 @@
             color: var(--navy);
             margin-bottom: 1rem;
             font-weight: 800;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .section-title::after {
@@ -243,7 +340,7 @@
             display: block;
             width: 80px;
             height: 5px;
-            background: var(--orange);
+            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-hover) 100%);
             margin: 15px auto 0;
             border-radius: 3px;
         }
@@ -270,21 +367,44 @@
             background: var(--white);
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-            transition: all 0.3s;
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
             border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--navy) 0%, var(--light-blue) 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(26, 54, 93, 0.15);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 50px rgba(15, 42, 74, 0.15);
         }
 
         .service-icon {
-            font-size: 3.5rem;
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             display: block;
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-card h3 {
@@ -303,74 +423,65 @@
         /* Why Choose Us */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .feature-card {
-            background: linear-gradient(135deg, var(--navy) 0%, #2c4d7a 100%);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
             color: var(--white);
             padding: 3rem;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.3s;
-            box-shadow: 0 5px 25px rgba(26, 54, 93, 0.2);
+            transition: all 0.4s;
+            box-shadow: 0 5px 30px rgba(15, 42, 74, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
+            transition: transform 0.6s;
+        }
+
+        .feature-card:hover::before {
+            transform: translate(-25%, -25%);
         }
 
         .feature-card:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: 0 10px 35px rgba(26, 54, 93, 0.3);
+            transform: scale(1.05) translateY(-8px);
+            box-shadow: 0 15px 45px rgba(15, 42, 74, 0.4);
         }
 
         .feature-icon {
-            font-size: 4rem;
+            font-size: 4.5rem;
             margin-bottom: 1.5rem;
             display: block;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
         }
 
         .feature-card h3 {
             margin-bottom: 1rem;
             font-size: 1.5rem;
             font-weight: 700;
+            position: relative;
+            z-index: 1;
         }
 
         .feature-card p {
             line-height: 1.8;
             opacity: 0.95;
-        }
-
-        /* About Section */
-        .about-content {
-            margin-top: 3rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .about-text {
-            background: var(--white);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-        }
-
-        .about-text h3 {
-            color: var(--navy);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .about-text p {
-            color: var(--light-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-            font-size: 1.1rem;
-        }
-
-        .about-text p:last-child {
-            margin-bottom: 0;
+            position: relative;
+            z-index: 1;
         }
 
         /* Testimonials */
@@ -385,104 +496,43 @@
             background: var(--white);
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
             position: relative;
             border-left: 5px solid var(--orange);
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
         }
 
         .stars {
             color: var(--orange);
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
         .review-text {
             color: var(--light-gray);
             font-style: italic;
             margin-bottom: 1.5rem;
-            line-height: 1.8;
-            font-size: 1rem;
+            line-height: 1.9;
+            font-size: 1.05rem;
         }
 
         .reviewer-name {
             color: var(--navy);
             font-weight: 700;
             font-style: normal;
+            font-size: 1.05rem;
         }
 
-        /* How It Works */
-        .steps-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            background: linear-gradient(135deg, var(--orange) 0%, #ea6a0a 100%);
-            color: var(--white);
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0 auto 1.5rem;
-            box-shadow: 0 5px 20px rgba(249, 115, 22, 0.3);
-        }
-
-        .step h3 {
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .step p {
+        .reviewer-location {
             color: var(--light-gray);
-            line-height: 1.7;
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 900px;
-            margin: 3rem auto 0;
-        }
-
-        .faq-item {
-            background: var(--white);
-            padding: 2rem;
-            margin-bottom: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-            border-left: 4px solid var(--orange);
-            transition: all 0.3s;
-        }
-
-        .faq-item:hover {
-            box-shadow: 0 5px 25px rgba(0,0,0,0.12);
-            transform: translateX(5px);
-        }
-
-        .faq-question {
-            color: var(--navy);
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .faq-answer {
-            color: var(--light-gray);
-            line-height: 1.8;
-            font-size: 1rem;
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
         }
 
         /* Contact Section */
@@ -491,24 +541,53 @@
             margin-bottom: 3rem;
         }
 
-        .contact-intro .big-call-btn {
+        .emergency-banner {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-hover) 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.3);
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 6px 25px rgba(255, 107, 53, 0.3);
+            }
+            50% {
+                box-shadow: 0 6px 35px rgba(255, 107, 53, 0.5);
+            }
+        }
+
+        .emergency-banner h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .emergency-banner p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        .big-call-btn {
             display: inline-block;
-            background: var(--orange);
+            background: var(--navy);
             color: var(--white);
             padding: 1.5rem 3rem;
             border-radius: 40px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.3);
+            font-size: 1.4rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 6px 25px rgba(15, 42, 74, 0.4);
             transition: all 0.3s;
         }
 
-        .contact-intro .big-call-btn:hover {
+        .big-call-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);
-            background: #ea6a0a;
+            box-shadow: 0 10px 35px rgba(15, 42, 74, 0.5);
+            background: var(--blue);
         }
 
         .contact-container {
@@ -522,7 +601,7 @@
             background: var(--white);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
         }
 
         .contact-form h3 {
@@ -545,7 +624,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 1rem;
             border: 2px solid #e2e8f0;
@@ -553,15 +633,16 @@
             font-family: inherit;
             font-size: 1rem;
             transition: all 0.3s;
-            background: #f8f9fa;
+            background: var(--light-bg);
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--orange);
             background: var(--white);
-            box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
         }
 
         .form-group textarea {
@@ -570,7 +651,7 @@
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--navy) 0%, #2c4d7a 100%);
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-hover) 100%);
             color: var(--white);
             padding: 1.2rem 2.5rem;
             border: none;
@@ -580,20 +661,20 @@
             cursor: pointer;
             width: 100%;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3);
+            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(26, 54, 93, 0.4);
+            box-shadow: 0 6px 30px rgba(255, 107, 53, 0.4);
         }
 
         .contact-info {
-            background: linear-gradient(135deg, var(--navy) 0%, #2c4d7a 100%);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
             color: var(--white);
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 5px 25px rgba(26, 54, 93, 0.2);
+            box-shadow: 0 5px 30px rgba(15, 42, 74, 0.3);
         }
 
         .contact-info h3 {
@@ -636,7 +717,7 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--navy) 0%, #2c4d7a 100%);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
             color: var(--white);
             padding: 4rem 20px 1.5rem;
         }
@@ -663,7 +744,7 @@
             text-decoration: none;
             line-height: 2;
             display: block;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
 
         .footer-section a:hover {
@@ -703,19 +784,19 @@
             }
 
             .hero {
-                padding: 80px 20px;
+                padding: 100px 20px 80px;
             }
 
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
 
             .hero .subheadline {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .services-grid,
@@ -735,19 +816,40 @@
 
             .btn-primary, .btn-secondary {
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px;
+            }
+
+            .trust-badges {
+                gap: 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
 
             .trust-badges {
                 flex-direction: column;
-                gap: 1rem;
+                align-items: center;
             }
+
+            .trust-badge {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -755,15 +857,18 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">Nebraska Building Services</a>
+            <div class="logo-section">
+                <a href="#" class="logo">🔧 Crawford Plumbing</a>
+                <span class="logo-tagline">Expert Plumbing Services in Omaha</span>
+            </div>
             <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             <nav id="mainNav">
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Us</a>
-                <a href="#about">About</a>
+                <a href="#testimonials">Reviews</a>
                 <a href="#contact">Contact</a>
-                <a href="tel:4024239825" class="call-btn">Call Now</a>
+                <a href="tel:4025258599" class="call-btn">📞 (402) 525-8599</a>
             </nav>
         </div>
     </header>
@@ -771,238 +876,200 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Professional Building Services in Lincoln, Nebraska</h1>
-            <p class="subheadline">Family-owned and trusted in the community</p>
+            <div class="hero-badge">⚡ 24/7 EMERGENCY SERVICE AVAILABLE</div>
+            <h1>Expert Plumbing Services You Can Trust</h1>
+            <p class="subheadline">Fast, Reliable, Professional Plumbers Serving Omaha, NE</p>
             <div class="cta-buttons">
-                <a href="tel:4024239825" class="btn-primary">📞 Call Now: (402) 423-9825</a>
-                <a href="#contact" class="btn-secondary">Request Service</a>
+                <a href="tel:4025258599" class="btn-primary">📞 Call Now: (402) 525-8599</a>
+                <a href="#contact" class="btn-secondary">Schedule Service</a>
             </div>
             <div class="trust-badges">
                 <div class="trust-badge">
                     <span class="check">✓</span>
-                    <span>Locally Owned & Operated</span>
+                    <span>Licensed & Insured</span>
                 </div>
                 <div class="trust-badge">
                     <span class="check">✓</span>
-                    <span>Honest, Upfront Pricing</span>
+                    <span>Same-Day Service</span>
                 </div>
                 <div class="trust-badge">
                     <span class="check">✓</span>
-                    <span>Quality Workmanship</span>
+                    <span>Upfront Pricing</span>
+                </div>
+                <div class="trust-badge">
+                    <span class="check">✓</span>
+                    <span>100% Satisfaction</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services">
-        <h2 class="section-title">Our Building Services</h2>
-        <p class="section-subtitle">Comprehensive solutions for all your building needs</p>
+    <section id="services" class="fade-in">
+        <h2 class="section-title">Our Plumbing Services</h2>
+        <p class="section-subtitle">Comprehensive plumbing solutions for every need</p>
 
         <div class="services-grid">
             <div class="service-card">
-                <span class="service-icon">🏢</span>
-                <h3>Commercial Building Maintenance</h3>
-                <p>Keep your commercial property in top condition with our comprehensive maintenance services. We handle everything from routine inspections to repairs and upgrades.</p>
+                <span class="service-icon">🚿</span>
+                <h3>Drain Cleaning & Repair</h3>
+                <p>Fast and effective drain cleaning for clogs, slow drains, and sewer line issues. We use advanced tools to clear even the toughest blockages quickly.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔥</span>
+                <h3>Water Heater Services</h3>
+                <p>Installation, repair, and maintenance of all water heater types. From traditional tanks to tankless systems, we keep your hot water flowing.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">💧</span>
+                <h3>Leak Detection & Repair</h3>
+                <p>Expert leak detection and repair to prevent water damage. We find and fix leaks in pipes, faucets, toilets, and fixtures throughout your property.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🚽</span>
+                <h3>Toilet Repair & Installation</h3>
+                <p>Complete toilet services including repairs, replacements, and new installations. We handle running toilets, clogs, leaks, and full upgrades.</p>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">🔧</span>
+                <h3>Pipe Repair & Replacement</h3>
+                <p>Professional pipe services for burst pipes, corrosion, and complete repiping. We work with all pipe materials and ensure lasting solutions.</p>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🏠</span>
-                <h3>Residential Repairs</h3>
-                <p>From minor fixes to major repairs, we handle all your home maintenance needs with professionalism and care. Your home is our priority.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">🔨</span>
-                <h3>Construction Projects</h3>
-                <p>Quality construction services from start to finish. We bring your vision to life with expert craftsmanship and attention to detail on every project.</p>
-            </div>
-
-            <div class="service-card">
-                <span class="service-icon">✨</span>
-                <h3>Building Renovations</h3>
-                <p>Transform your space with our renovation expertise. We modernize and upgrade buildings while respecting your budget and timeline.</p>
+                <h3>Fixture Installation</h3>
+                <p>Install new faucets, sinks, garbage disposals, and plumbing fixtures. Upgrade your home with modern, efficient plumbing fixtures.</p>
             </div>
 
             <div class="service-card">
                 <span class="service-icon">🚨</span>
-                <h3>Emergency Services</h3>
-                <p>When urgent building issues arise, we're here to help fast. Our emergency response team is ready to address critical situations promptly.</p>
+                <h3>Emergency Plumbing</h3>
+                <p>24/7 emergency plumbing service when you need it most. We respond quickly to burst pipes, major leaks, and urgent plumbing crises.</p>
             </div>
 
             <div class="service-card">
-                <span class="service-icon">🛠️</span>
-                <h3>Preventative Maintenance</h3>
-                <p>Protect your investment with regular preventative maintenance. We help you avoid costly repairs by catching issues early and keeping everything running smoothly.</p>
+                <span class="service-icon">⚙️</span>
+                <h3>Sewer Line Services</h3>
+                <p>Comprehensive sewer line inspection, cleaning, and repair. We use camera inspection to diagnose issues and provide effective solutions.</p>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us">
-        <h2 class="section-title">Why Choose Nebraska Building Services?</h2>
-        <p class="section-subtitle">What sets us apart from the rest</p>
+    <section id="why-us" class="fade-in">
+        <h2 class="section-title">Why Choose Crawford Plumbing?</h2>
+        <p class="section-subtitle">Experience the Crawford difference</p>
 
         <div class="features-grid">
             <div class="feature-card">
-                <span class="feature-icon">🤝</span>
-                <h3>Honest & Transparent</h3>
-                <p>We explain everything clearly and keep you informed every step of the way. No confusing jargon or hidden surprises.</p>
+                <span class="feature-icon">⚡</span>
+                <h3>Fast Response Time</h3>
+                <p>We understand plumbing emergencies can't wait. Our team responds quickly, often providing same-day service to get your plumbing back on track.</p>
             </div>
 
             <div class="feature-card">
-                <span class="feature-icon">🏡</span>
-                <h3>Local Family Business</h3>
-                <p>Serving the Lincoln and Roca area for years. We're your neighbors committed to building lasting relationships in our community.</p>
+                <span class="feature-icon">🎓</span>
+                <h3>Expert Technicians</h3>
+                <p>Our licensed, experienced plumbers have seen it all. We bring years of expertise and ongoing training to every job, big or small.</p>
             </div>
 
             <div class="feature-card">
-                <span class="feature-icon">⭐</span>
-                <h3>Quality First</h3>
-                <p>We do it right the first time, every time. Our reputation is built on quality workmanship and attention to detail.</p>
+                <span class="feature-icon">💯</span>
+                <h3>Quality Workmanship</h3>
+                <p>We take pride in doing the job right the first time. Quality materials, expert installation, and attention to detail are our standards.</p>
             </div>
 
             <div class="feature-card">
                 <span class="feature-icon">💰</span>
-                <h3>Fair Pricing</h3>
-                <p>No hidden fees or surprise costs. We provide clear, upfront estimates so you know exactly what to expect.</p>
+                <h3>Transparent Pricing</h3>
+                <p>No surprises on your bill. We provide upfront estimates before we start work, so you know exactly what to expect.</p>
             </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2 class="section-title">About Nebraska Building Services</h2>
-        <p class="section-subtitle">Your trusted partner for quality building services</p>
+            <div class="feature-card">
+                <span class="feature-icon">🛡️</span>
+                <h3>Fully Licensed & Insured</h3>
+                <p>Your peace of mind is important. We're fully licensed and insured, protecting you and your property on every job.</p>
+            </div>
 
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Serving the Lincoln & Roca Community</h3>
-                <p>Nebraska Building Services is a family-owned business dedicated to providing exceptional building services to the Lincoln and Roca area. Led by President John P. (Pat) Welch, our team brings years of experience and a genuine commitment to quality workmanship.</p>
-
-                <p>We understand that your building projects—whether commercial or residential—represent significant investments. That's why we treat every job with the care and attention it deserves. From small repairs to major construction projects, we approach each task with the same dedication to excellence.</p>
-
-                <p>Our reputation in the community is built on honesty, reliability, and outstanding results. We're not just contractors; we're your neighbors who take pride in helping maintain and improve our local buildings and homes. When you work with Nebraska Building Services, you're working with people who genuinely care about your satisfaction and the quality of their work.</p>
-
-                <p><strong>Contact us today to discuss your building needs. We're here to help make your project a success.</strong></p>
+            <div class="feature-card">
+                <span class="feature-icon">⭐</span>
+                <h3>Customer Satisfaction</h3>
+                <p>Your satisfaction is our priority. We don't consider a job done until you're completely happy with the results.</p>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials">
+    <section id="testimonials" class="fade-in">
         <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-subtitle">Real feedback from satisfied clients</p>
+        <p class="section-subtitle">Real reviews from satisfied Omaha residents</p>
 
         <div class="reviews-grid">
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p class="review-text">"Nebraska Building Services did an outstanding job renovating our office building. Pat and his team were professional, punctual, and the quality of work exceeded our expectations. They stayed within budget and completed everything on time. Highly recommend!"</p>
-                <p class="reviewer-name">— Michael R., Commercial Property Owner</p>
+                <p class="review-text">"Had a burst pipe emergency at 11 PM and Crawford Plumbing was at my house within 30 minutes! They fixed the problem quickly and professionally. The pricing was fair even for emergency service. Highly recommend!"</p>
+                <p class="reviewer-name">— Sarah M.</p>
+                <p class="reviewer-location">Omaha, NE</p>
             </div>
 
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p class="review-text">"We've used Nebraska Building Services for several repair projects at our home, and they've been fantastic every time. They're honest about what needs to be done, explain everything clearly, and their pricing is always fair. It's rare to find such trustworthy contractors these days."</p>
-                <p class="reviewer-name">— Jennifer S., Lincoln Homeowner</p>
+                <p class="review-text">"We needed a new water heater installed and Crawford Plumbing did an outstanding job. They explained all our options, installed a high-efficiency tankless unit, and cleaned up perfectly. Best plumbers in Omaha!"</p>
+                <p class="reviewer-name">— Mike and Jennifer R.</p>
+                <p class="reviewer-location">Omaha, NE</p>
             </div>
 
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p class="review-text">"After getting quotes from three different companies, Nebraska Building Services stood out for their transparency and professionalism. They didn't try to upsell us on things we didn't need. The work was completed beautifully, and they cleaned up thoroughly every day. Will definitely use them again."</p>
-                <p class="reviewer-name">— David and Karen L., Roca Residents</p>
+                <p class="review-text">"Honest, reliable, and professional. They diagnosed our sewer line issue with a camera inspection and fixed it without unnecessary upselling. The price was exactly what they quoted. Finally found a plumber I can trust!"</p>
+                <p class="reviewer-name">— David T.</p>
+                <p class="reviewer-location">Omaha, NE</p>
             </div>
 
             <div class="review-card">
                 <div class="stars">★★★★★</div>
-                <p class="review-text">"When we had an emergency building issue, Nebraska Building Services responded quickly and fixed the problem efficiently. Their emergency service is top-notch. They're now our go-to for all maintenance and repairs. Reliable, skilled, and trustworthy—you can't ask for more."</p>
-                <p class="reviewer-name">— Robert T., Facility Manager</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works">
-        <h2 class="section-title">How It Works</h2>
-        <p class="section-subtitle">Getting started is simple and straightforward</p>
-
-        <div class="steps-container">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Call or Contact Us</h3>
-                <p>Reach out by phone at (402) 423-9825 or fill out our contact form. We'll discuss your project and schedule a convenient time to talk.</p>
+                <p class="review-text">"Crawford Plumbing has handled all our plumbing needs for the past 3 years. From small repairs to major installations, they're always prompt, professional, and their work is top-notch. Wouldn't call anyone else!"</p>
+                <p class="reviewer-name">— Lisa and Robert K.</p>
+                <p class="reviewer-location">Omaha, NE</p>
             </div>
 
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>We Assess Your Needs</h3>
-                <p>We'll visit your site to evaluate the work needed, discuss your goals, and answer any questions you have about the project.</p>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Bathroom renovation required all new plumbing fixtures. Crawford Plumbing installed everything beautifully and even gave suggestions that saved us money. Very knowledgeable team and great customer service!"</p>
+                <p class="reviewer-name">— Amanda S.</p>
+                <p class="reviewer-location">Omaha, NE</p>
             </div>
 
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Clear Quote & Timeline</h3>
-                <p>You'll receive a detailed, transparent quote with no hidden costs and a realistic timeline for completion. No pressure, just honest information.</p>
-            </div>
-
-            <div class="step">
-                <div class="step-number">4</div>
-                <h3>Quality Work Completed</h3>
-                <p>Our skilled team completes your project with attention to detail and quality craftsmanship. We keep you informed and ensure your satisfaction.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <h2 class="section-title">Frequently Asked Questions</h2>
-        <p class="section-subtitle">Answers to common questions</p>
-
-        <div class="faq-container">
-            <div class="faq-item">
-                <div class="faq-question">Do you offer free estimates?</div>
-                <div class="faq-answer">Yes, we provide free, no-obligation estimates for all projects. We'll assess your needs and give you a clear, detailed quote with transparent pricing so you know exactly what to expect.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">What areas do you serve?</div>
-                <div class="faq-answer">We primarily serve the Lincoln and Roca, Nebraska area and surrounding communities. If you're in the region and have a building project, give us a call and we'll let you know if we can help.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">What types of projects do you handle?</div>
-                <div class="faq-answer">We handle a wide range of building services including commercial maintenance, residential repairs, construction projects, renovations, preventative maintenance, and emergency services. From small repairs to large construction jobs, we have the experience to get it done right.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Are you licensed and insured?</div>
-                <div class="faq-answer">Absolutely. Nebraska Building Services is fully licensed and insured to protect both our team and your property. We maintain all necessary certifications and insurance coverage for your peace of mind.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How quickly can you start on a project?</div>
-                <div class="faq-answer">Our scheduling depends on the scope of work and our current project load. For emergency services, we respond as quickly as possible—often the same day. For planned projects, we'll work with you to find a timeline that meets your needs. Contact us to discuss your specific situation.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Do you guarantee your work?</div>
-                <div class="faq-answer">Yes, we stand behind the quality of our work. We're committed to your satisfaction and will address any concerns that arise. Our reputation is built on quality workmanship and customer service, and we take that seriously.</div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Had persistent drain issues that other plumbers couldn't solve. Crawford Plumbing found the root cause and fixed it permanently. That was 2 years ago and we haven't had a problem since. True professionals!"</p>
+                <p class="reviewer-name">— James W.</p>
+                <p class="reviewer-location">Omaha, NE</p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <h2 class="section-title">Ready to Get Started?</h2>
-        <p class="section-subtitle">Let's discuss your building project</p>
+    <section id="contact" class="fade-in">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">We're here to help with all your plumbing needs</p>
 
         <div class="contact-intro">
-            <a href="tel:4024239825" class="big-call-btn">📞 Call Now: (402) 423-9825</a>
+            <div class="emergency-banner">
+                <h3>🚨 Need Emergency Plumbing Service?</h3>
+                <p>We're available 24/7 for plumbing emergencies</p>
+                <a href="tel:4025258599" class="big-call-btn">📞 Call Now: (402) 525-8599</a>
+            </div>
         </div>
 
         <div class="contact-container">
             <div class="contact-form">
-                <h3>Send Us a Message</h3>
+                <h3>Schedule a Service</h3>
                 <form onsubmit="handleSubmit(event)">
                     <div class="form-group">
                         <label for="name">Your Name *</label>
@@ -1020,8 +1087,24 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Tell Us About Your Project *</label>
-                        <textarea id="message" name="message" required placeholder="Describe what you need help with..."></textarea>
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="">Select a service...</option>
+                            <option value="drain">Drain Cleaning</option>
+                            <option value="water-heater">Water Heater</option>
+                            <option value="leak">Leak Repair</option>
+                            <option value="toilet">Toilet Service</option>
+                            <option value="pipe">Pipe Repair</option>
+                            <option value="fixture">Fixture Installation</option>
+                            <option value="emergency">Emergency Service</option>
+                            <option value="sewer">Sewer Line</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Describe Your Plumbing Issue *</label>
+                        <textarea id="message" name="message" required placeholder="Please describe the plumbing problem or service you need..."></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">Send Message</button>
@@ -1032,33 +1115,37 @@
                 <h3>Contact Information</h3>
 
                 <div class="contact-info-item">
-                    <span class="icon">📍</span>
-                    <div>
-                        <strong>Location</strong><br>
-                        Roca, Nebraska<br>
-                        Serving Lincoln and surrounding areas
-                    </div>
-                </div>
-
-                <div class="contact-info-item">
                     <span class="icon">📞</span>
                     <div>
                         <strong>Phone</strong><br>
-                        <a href="tel:4024239825">(402) 423-9825</a>
+                        <a href="tel:4025258599">(402) 525-8599</a><br>
+                        <small>Available 24/7 for emergencies</small>
                     </div>
                 </div>
 
                 <div class="contact-info-item">
-                    <span class="icon">👤</span>
+                    <span class="icon">📍</span>
                     <div>
-                        <strong>President</strong><br>
-                        John P. (Pat) Welch
+                        <strong>Service Area</strong><br>
+                        Omaha, NE<br>
+                        and surrounding areas
+                    </div>
+                </div>
+
+                <div class="contact-info-item">
+                    <span class="icon">🕐</span>
+                    <div>
+                        <strong>Hours</strong><br>
+                        Mon-Fri: 7:00 AM - 7:00 PM<br>
+                        Sat: 8:00 AM - 5:00 PM<br>
+                        Sun: Emergency Service Only<br>
+                        <strong>24/7 Emergency Service</strong>
                     </div>
                 </div>
 
                 <div class="reassurance">
-                    <strong>No-pressure consultation</strong><br>
-                    We're here to answer your questions and provide honest advice about your building needs. There's no obligation—just straightforward information to help you make the best decision for your project.
+                    <strong>Free Estimates Available</strong><br>
+                    We provide free, no-obligation estimates for most services. Call us today to discuss your plumbing needs and get a transparent quote.
                 </div>
             </div>
         </div>
@@ -1068,16 +1155,19 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Nebraska Building Services</h3>
-                <p>Professional building services, construction, maintenance, and repairs serving the Lincoln and Roca, Nebraska area.</p>
-                <p style="margin-top: 1rem;"><strong>Family-owned and operated since day one.</strong></p>
+                <h3>Crawford Plumbing</h3>
+                <p>Your trusted plumbing experts serving Omaha, NE and surrounding areas. Professional, reliable plumbing services for residential and commercial properties.</p>
+                <p style="margin-top: 1rem;"><strong>Licensed, Insured & Trusted</strong></p>
             </div>
 
             <div class="footer-section">
-                <h3>Contact Information</h3>
-                <p>📍 Roca, Nebraska</p>
-                <p>📞 <a href="tel:4024239825">(402) 423-9825</a></p>
-                <p>👤 President: John P. (Pat) Welch</p>
+                <h3>Our Services</h3>
+                <a href="#services">Drain Cleaning & Repair</a>
+                <a href="#services">Water Heater Services</a>
+                <a href="#services">Leak Detection & Repair</a>
+                <a href="#services">Toilet Repair & Installation</a>
+                <a href="#services">Pipe Repair & Replacement</a>
+                <a href="#services">Emergency Plumbing</a>
             </div>
 
             <div class="footer-section">
@@ -1085,38 +1175,37 @@
                 <a href="#home">Home</a>
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Choose Us</a>
-                <a href="#about">About Us</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="#how-it-works">How It Works</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
+                <a href="#testimonials">Customer Reviews</a>
+                <a href="#contact">Contact Us</a>
             </div>
 
             <div class="footer-section">
-                <h3>Our Services</h3>
-                <a href="#services">Commercial Maintenance</a>
-                <a href="#services">Residential Repairs</a>
-                <a href="#services">Construction Projects</a>
-                <a href="#services">Building Renovations</a>
-                <a href="#services">Emergency Services</a>
-                <a href="#services">Preventative Maintenance</a>
+                <h3>Contact Us</h3>
+                <p>📞 <a href="tel:4025258599">(402) 525-8599</a></p>
+                <p>📍 Omaha, Nebraska</p>
+                <p>🚨 24/7 Emergency Service</p>
+                <p style="margin-top: 1rem;">
+                    <a href="tel:4025258599" style="background: var(--orange); padding: 0.8rem 1.5rem; border-radius: 25px; display: inline-block; margin-top: 0.5rem;">Call Now</a>
+                </p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Nebraska Building Services - Roca & Lincoln, NE. All rights reserved.</p>
+            <p>&copy; 2025 Crawford Plumbing - Omaha, NE. All rights reserved. | Licensed & Insured</p>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
         function toggleMenu() {
             const nav = document.getElementById('mainNav');
             nav.classList.toggle('active');
         }
 
+        // Form submission handler
         function handleSubmit(event) {
             event.preventDefault();
-            alert('Thank you for your message! We\'ll get back to you as soon as possible. For immediate assistance, please call us at (402) 423-9825.');
+            alert('Thank you for your message! We\'ll contact you shortly. For immediate assistance, please call us at (402) 525-8599.');
             event.target.reset();
         }
 
@@ -1128,7 +1217,7 @@
             });
         });
 
-        // Add smooth scroll behavior
+        // Smooth scroll behavior
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1139,6 +1228,35 @@
                         block: 'start'
                     });
                 }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Add floating animation to CTA buttons
+        const ctaButtons = document.querySelectorAll('.btn-primary');
+        ctaButtons.forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.animation = 'none';
+                setTimeout(() => {
+                    this.style.animation = '';
+                }, 10);
             });
         });
     </script>
