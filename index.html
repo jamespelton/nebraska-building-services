@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Crawford Plumbing - Expert plumbing services in Omaha, NE. Fast, reliable, and professional. Call (402) 525-8599 for 24/7 emergency plumbing service.">
-    <meta name="keywords" content="plumbing, Omaha plumbing, emergency plumber, water heater, drain cleaning, leak repair, Crawford Plumbing, Nebraska plumber">
-    <title>Crawford Plumbing | Expert Plumbing Services in Omaha, NE | (402) 525-8599</title>
+    <meta name="description" content="Crawford Plumbing provides honest, reliable plumbing services in Hickman, NE with 32+ years of experience. Family-owned, licensed master plumber. 24/7 emergency service. Call (402) 525-8599 today!">
+    <meta name="keywords" content="Crawford Plumbing, Hickman plumber, Nebraska plumbing, emergency plumber, water heater repair, drain cleaning, licensed plumber, Pat Crawford">
+    <title>Crawford Plumbing - Honest Plumbing Services in Hickman, NE | 32+ Years Experience</title>
     <style>
         * {
             margin: 0;
@@ -14,38 +14,54 @@
         }
 
         :root {
-            --navy: #0f2a4a;
-            --blue: #1e4d7b;
-            --light-blue: #3a6ea5;
-            --orange: #ff6b35;
-            --orange-hover: #e85a2a;
-            --light-bg: #f7f9fc;
-            --dark-gray: #2d3748;
+            --navy: #1e3a8a;
+            --navy-dark: #1e293b;
+            --navy-light: #3b82f6;
+            --orange: #f97316;
+            --orange-dark: #ea580c;
+            --dark-gray: #334155;
             --light-gray: #64748b;
+            --lighter-gray: #94a3b8;
+            --bg-light: #f8fafc;
             --white: #ffffff;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--dark-gray);
-            overflow-x: hidden;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        /* Header Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--dark-gray);
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--navy-dark);
+        }
+
+        h1 { font-size: 3.5rem; }
+        h2 { font-size: 2.75rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.25rem; }
+
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-            color: var(--white);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
             padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-            animation: slideDown 0.5s ease-out;
+            box-shadow: var(--shadow-lg);
+            animation: slideDown 0.6s ease-out;
         }
 
         @keyframes slideDown {
@@ -60,96 +76,46 @@
         }
 
         .header-container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
-        .logo-section {
+        .logo-wrapper {
             display: flex;
             flex-direction: column;
-            gap: 0.3rem;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.75rem;
             font-weight: 800;
             color: var(--white);
             text-decoration: none;
             letter-spacing: -0.5px;
-            transition: transform 0.3s;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .logo:hover {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
-        .logo-tagline {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.85);
+        .logo-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.8);
             font-weight: 400;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-weight: 500;
-            font-size: 0.95rem;
-            position: relative;
-        }
-
-        nav a:not(.call-btn)::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--orange);
-            transition: width 0.3s;
-        }
-
-        nav a:not(.call-btn):hover::after {
-            width: 100%;
-        }
-
-        .call-btn {
-            background: var(--orange);
-            color: var(--white);
-            padding: 0.75rem 1.8rem;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            white-space: nowrap;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-            }
-            50% {
-                box-shadow: 0 4px 25px rgba(255, 107, 53, 0.6);
-            }
-        }
-
-        .call-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.5);
-            background: var(--orange-hover);
+            margin-top: 0.2rem;
+            letter-spacing: 0.5px;
         }
 
         .mobile-menu-toggle {
@@ -157,19 +123,79 @@
             background: none;
             border: none;
             color: var(--white);
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
             padding: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a:not(.btn-call)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange);
+            transition: width 0.3s ease;
+        }
+
+        nav a:not(.btn-call):hover::after {
+            width: 100%;
+        }
+
+        .btn-call {
+            background: var(--orange);
+            color: var(--white);
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
+            }
+            50% {
+                box-shadow: 0 4px 25px rgba(249, 115, 22, 0.6);
+            }
+        }
+
+        .btn-call:hover {
+            background: var(--orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.5);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(15, 42, 74, 0.95) 0%, rgba(30, 77, 123, 0.95) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%230f2a4a" width="1200" height="600"/><path d="M0 300L50 280L100 320L150 290L200 310L250 270L300 320L350 280L400 330L450 290L500 310L550 280L600 320L650 290L700 310L750 280L800 320L850 290L900 310L950 280L1000 320L1050 290L1100 310L1150 280L1200 320V600H0Z" fill="%231e4d7b" opacity="0.3"/></svg>');
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.97) 0%, rgba(30, 41, 59, 0.95) 100%),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231e3a8a;stop-opacity:1" /><stop offset="100%" style="stop-color:%231e293b;stop-opacity:1" /></linearGradient></defs><rect width="1440" height="800" fill="url(%23grad)"/><path d="M0 400L60 380L120 420L180 390L240 410L300 370L360 420L420 380L480 430L540 390L600 410L660 380L720 420L780 390L840 410L900 380L960 420L1020 390L1080 410L1140 380L1200 420L1260 390L1320 410L1380 380L1440 420V800H0Z" fill="%233b82f6" opacity="0.1"/></svg>');
             background-size: cover;
             background-position: center;
-            padding: 140px 20px 120px;
-            text-align: center;
+            padding: 140px 2rem 120px;
             position: relative;
             overflow: hidden;
         }
@@ -181,17 +207,33 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: radial-gradient(circle at 20% 50%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 50%, rgba(58, 110, 165, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 50%, rgba(249, 115, 22, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .hero-content {
-            max-width: 900px;
+            max-width: 1280px;
             margin: 0 auto;
+            text-align: center;
             position: relative;
             z-index: 1;
-            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(249, 115, 22, 0.15);
+            color: var(--orange);
+            padding: 0.6rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            border: 2px solid rgba(249, 115, 22, 0.3);
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
         @keyframes fadeInUp {
@@ -205,106 +247,72 @@
             }
         }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 107, 53, 0.2);
-            color: var(--orange);
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 1.5rem;
-            border: 2px solid var(--orange);
-            animation: fadeIn 1s ease-out 0.3s both;
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
 
         .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
             color: var(--white);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             font-weight: 900;
             line-height: 1.1;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1s ease-out 0.2s both;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
         .hero .subheadline {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
             color: rgba(255, 255, 255, 0.95);
-            font-weight: 500;
-            text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-            animation: fadeInUp 1s ease-out 0.4s both;
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
-        .trust-badges {
+        .hero-cta {
             display: flex;
-            gap: 2.5rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
-            margin-top: 3rem;
-            animation: fadeInUp 1s ease-out 0.8s both;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
-        .trust-badge {
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-            color: var(--white);
-            font-weight: 600;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .trust-badge .check {
-            color: var(--orange);
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.6s both;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 1.2rem 2.8rem;
-            border-radius: 35px;
+        .btn {
+            padding: 1.2rem 2.75rem;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.15rem;
-            transition: all 0.3s;
-            display: inline-block;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
             background: var(--orange);
             color: var(--white);
-            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
         }
 
         .btn-primary:hover {
+            background: var(--orange-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
-            background: var(--orange-hover);
+            box-shadow: 0 12px 35px rgba(249, 115, 22, 0.5);
         }
 
         .btn-secondary {
             background: rgba(255, 255, 255, 0.15);
             color: var(--white);
-            border: 2px solid var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(10px);
         }
 
@@ -312,65 +320,116 @@
             background: var(--white);
             color: var(--navy);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+        }
+
+        .trust-badges {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease-out 1s both;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--white);
+            font-weight: 600;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.75rem;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .trust-badge:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .trust-badge-icon {
+            font-size: 1.5rem;
+            color: var(--orange);
         }
 
         /* Section Styles */
         section {
-            padding: 90px 20px;
-            max-width: 1200px;
+            padding: 100px 2rem;
+        }
+
+        .section-alt {
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1280px;
             margin: 0 auto;
         }
 
-        section:nth-child(even) {
-            background: var(--light-bg);
+        .section-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--orange);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            color: var(--navy);
-            margin-bottom: 1rem;
-            font-weight: 800;
-            animation: fadeInUp 0.8s ease-out;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--navy-dark);
+            position: relative;
+            display: inline-block;
         }
 
         .section-title::after {
             content: '';
-            display: block;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
             width: 80px;
-            height: 5px;
-            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-hover) 100%);
-            margin: 15px auto 0;
-            border-radius: 3px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--orange) 0%, var(--orange-dark) 100%);
+            border-radius: 2px;
         }
 
         .section-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--light-gray);
-            margin-bottom: 4rem;
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 2rem auto 0;
+            line-height: 1.8;
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
         }
 
         .service-card {
             background: var(--white);
-            padding: 2.5rem;
+            padding: 3rem;
             border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-md);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
             overflow: hidden;
         }
@@ -380,11 +439,11 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 5px;
-            background: linear-gradient(90deg, var(--navy) 0%, var(--light-blue) 100%);
+            background: linear-gradient(90deg, var(--navy) 0%, var(--navy-light) 100%);
             transform: scaleX(0);
-            transition: transform 0.4s;
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover::before {
@@ -392,15 +451,15 @@
         }
 
         .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 50px rgba(15, 42, 74, 0.15);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
         }
 
         .service-icon {
-            font-size: 4rem;
+            font-size: 3.5rem;
             margin-bottom: 1.5rem;
             display: block;
-            transition: transform 0.4s;
+            transition: transform 0.4s ease;
         }
 
         .service-card:hover .service-icon {
@@ -408,189 +467,309 @@
         }
 
         .service-card h3 {
-            color: var(--navy);
+            color: var(--navy-dark);
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            font-weight: 700;
         }
 
         .service-card p {
             color: var(--light-gray);
             line-height: 1.8;
-            font-size: 1rem;
         }
 
         /* Why Choose Us */
-        .features-grid {
+        .reasons-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2.5rem;
-            margin-top: 3rem;
         }
 
-        .feature-card {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+        .reason-card {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
             color: var(--white);
-            padding: 3rem;
+            padding: 3.5rem;
             border-radius: 20px;
             text-align: center;
-            transition: all 0.4s;
-            box-shadow: 0 5px 30px rgba(15, 42, 74, 0.3);
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .feature-card::before {
+        .reason-card::before {
             content: '';
             position: absolute;
             top: -50%;
             right: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(255, 107, 53, 0.1) 0%, transparent 70%);
-            transition: transform 0.6s;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+            transition: transform 0.6s ease;
         }
 
-        .feature-card:hover::before {
+        .reason-card:hover::before {
             transform: translate(-25%, -25%);
         }
 
-        .feature-card:hover {
-            transform: scale(1.05) translateY(-8px);
-            box-shadow: 0 15px 45px rgba(15, 42, 74, 0.4);
+        .reason-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: var(--shadow-xl);
         }
 
-        .feature-icon {
-            font-size: 4.5rem;
+        .reason-icon {
+            font-size: 4rem;
             margin-bottom: 1.5rem;
             display: block;
+            filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
             position: relative;
             z-index: 1;
-            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
         }
 
-        .feature-card h3 {
+        .reason-card h3 {
+            color: var(--white);
             margin-bottom: 1rem;
             font-size: 1.5rem;
-            font-weight: 700;
             position: relative;
             z-index: 1;
         }
 
-        .feature-card p {
+        .reason-card p {
+            color: rgba(255, 255, 255, 0.9);
             line-height: 1.8;
-            opacity: 0.95;
             position: relative;
             z-index: 1;
         }
 
-        /* Testimonials */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-        }
-
-        .review-card {
+        /* About Section */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
             background: var(--white);
-            padding: 2.5rem;
+            padding: 4rem;
             border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
-            position: relative;
-            border-left: 5px solid var(--orange);
-            transition: all 0.3s;
+            box-shadow: var(--shadow-lg);
         }
 
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-        }
-
-        .stars {
-            color: var(--orange);
-            font-size: 1.4rem;
-            margin-bottom: 1.2rem;
-            letter-spacing: 3px;
-        }
-
-        .review-text {
-            color: var(--light-gray);
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-            font-size: 1.05rem;
-        }
-
-        .reviewer-name {
-            color: var(--navy);
-            font-weight: 700;
-            font-style: normal;
-            font-size: 1.05rem;
-        }
-
-        .reviewer-location {
-            color: var(--light-gray);
-            font-size: 0.9rem;
-            margin-top: 0.3rem;
-        }
-
-        /* Contact Section */
-        .contact-intro {
+        .about-header {
             text-align: center;
             margin-bottom: 3rem;
         }
 
-        .emergency-banner {
-            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-hover) 100%);
-            color: var(--white);
-            padding: 2rem;
+        .about-header h3 {
+            font-size: 2rem;
+            color: var(--navy-dark);
+            margin-bottom: 1rem;
+        }
+
+        .about-header .owner-badge {
+            display: inline-block;
+            background: rgba(249, 115, 22, 0.1);
+            color: var(--orange);
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .about-text p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .about-text strong {
+            color: var(--navy-dark);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 3rem;
             border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--orange);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .stars {
+            color: var(--orange);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-text {
+            color: var(--light-gray);
+            font-style: italic;
+            line-height: 1.9;
             margin-bottom: 2rem;
-            box-shadow: 0 6px 25px rgba(255, 107, 53, 0.3);
-            animation: glow 2s infinite;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-author {
+            color: var(--navy-dark);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        .testimonial-location {
+            color: var(--lighter-gray);
+            font-size: 0.9rem;
+            margin-top: 0.3rem;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            color: var(--white);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 0 auto 2rem;
+            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .step:hover .step-number {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+        }
+
+        .step h3 {
+            color: var(--navy-dark);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .step p {
+            color: var(--light-gray);
+            line-height: 1.8;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            padding: 2.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--orange);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(8px);
+        }
+
+        .faq-question {
+            color: var(--navy-dark);
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-answer {
+            color: var(--light-gray);
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+
+        /* Contact Section */
+        .contact-cta {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(249, 115, 22, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .contact-cta-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .emergency-banner {
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+            color: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+            box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4);
+            animation: glow 2s ease-in-out infinite;
         }
 
         @keyframes glow {
             0%, 100% {
-                box-shadow: 0 6px 25px rgba(255, 107, 53, 0.3);
+                box-shadow: 0 8px 30px rgba(249, 115, 22, 0.4);
             }
             50% {
-                box-shadow: 0 6px 35px rgba(255, 107, 53, 0.5);
+                box-shadow: 0 8px 40px rgba(249, 115, 22, 0.6);
             }
         }
 
         .emergency-banner h3 {
-            font-size: 1.8rem;
+            color: var(--white);
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
         .emergency-banner p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             opacity: 0.95;
         }
 
-        .big-call-btn {
-            display: inline-block;
-            background: var(--navy);
-            color: var(--white);
-            padding: 1.5rem 3rem;
-            border-radius: 40px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.4rem;
-            margin-top: 1.5rem;
-            box-shadow: 0 6px 25px rgba(15, 42, 74, 0.4);
-            transition: all 0.3s;
-        }
-
-        .big-call-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 35px rgba(15, 42, 74, 0.5);
-            background: var(--blue);
-        }
-
-        .contact-container {
+        .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 3rem;
@@ -599,27 +778,26 @@
 
         .contact-form {
             background: var(--white);
-            padding: 3rem;
+            padding: 3.5rem;
             border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(0,0,0,0.08);
+            box-shadow: var(--shadow-lg);
         }
 
         .contact-form h3 {
-            color: var(--navy);
-            margin-bottom: 1.5rem;
+            color: var(--navy-dark);
+            margin-bottom: 2rem;
             font-size: 1.8rem;
-            font-weight: 700;
         }
 
         .form-group {
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
         }
 
         .form-group label {
             display: block;
-            color: var(--navy);
+            color: var(--navy-dark);
             font-weight: 600;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.75rem;
             font-size: 0.95rem;
         }
 
@@ -627,13 +805,13 @@
         .form-group textarea,
         .form-group select {
             width: 100%;
-            padding: 1rem;
+            padding: 1.1rem;
             border: 2px solid #e2e8f0;
-            border-radius: 10px;
+            border-radius: 12px;
             font-family: inherit;
             font-size: 1rem;
-            transition: all 0.3s;
-            background: var(--light-bg);
+            transition: all 0.3s ease;
+            background: var(--bg-light);
         }
 
         .form-group input:focus,
@@ -642,129 +820,147 @@
             outline: none;
             border-color: var(--orange);
             background: var(--white);
-            box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+            box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 150px;
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-hover) 100%);
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
             color: var(--white);
             padding: 1.2rem 2.5rem;
             border: none;
-            border-radius: 30px;
+            border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
             width: 100%;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 25px rgba(249, 115, 22, 0.4);
         }
 
         .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(255, 107, 53, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(249, 115, 22, 0.5);
         }
 
         .contact-info {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-            color: var(--white);
-            padding: 3rem;
+            background: var(--white);
+            padding: 3.5rem;
             border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(15, 42, 74, 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
         .contact-info h3 {
+            color: var(--navy-dark);
             margin-bottom: 2rem;
             font-size: 1.8rem;
-            font-weight: 700;
         }
 
         .contact-info-item {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 1.25rem;
             margin-bottom: 2rem;
-            line-height: 1.8;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover {
+            background: #e2e8f0;
+            transform: translateX(5px);
         }
 
         .contact-info-item .icon {
-            font-size: 1.5rem;
+            font-size: 1.75rem;
+            color: var(--orange);
             min-width: 30px;
         }
 
         .contact-info-item a {
-            color: var(--white);
+            color: var(--navy-dark);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
         .contact-info-item a:hover {
             color: var(--orange);
         }
 
-        .reassurance {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            opacity: 0.9;
-        }
-
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+            background: linear-gradient(135deg, var(--navy-dark) 0%, #0f172a 100%);
             color: var(--white);
-            padding: 4rem 20px 1.5rem;
+            padding: 5rem 2rem 2rem;
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 3rem;
+            gap: 4rem;
+            margin-bottom: 4rem;
         }
 
         .footer-section h3 {
-            margin-bottom: 1.5rem;
             color: var(--orange);
-            font-weight: 700;
-            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .footer-section p,
         .footer-section a {
-            color: rgba(255,255,255,0.9);
+            color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             line-height: 2;
             display: block;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
         }
 
         .footer-section a:hover {
             color: var(--orange);
-            padding-left: 5px;
+            padding-left: 8px;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 2rem;
-            margin-top: 2rem;
             text-align: center;
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
         }
 
-        /* Mobile Responsive */
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Mobile Styles */
         @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+
             .header-container {
                 flex-wrap: wrap;
+                padding: 0 1rem;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
             }
 
             nav {
@@ -772,19 +968,15 @@
                 width: 100%;
                 flex-direction: column;
                 gap: 1rem;
-                padding: 1.5rem 0 0.5rem;
+                padding: 1.5rem 0;
             }
 
             nav.active {
                 display: flex;
             }
 
-            .mobile-menu-toggle {
-                display: block;
-            }
-
             .hero {
-                padding: 100px 20px 80px;
+                padding: 100px 1.5rem 80px;
             }
 
             .hero h1 {
@@ -795,32 +987,58 @@
                 font-size: 1.2rem;
             }
 
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 350px;
+                justify-content: center;
+            }
+
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .trust-badge {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            section {
+                padding: 60px 1.5rem;
+            }
+
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .services-grid,
-            .features-grid,
-            .reviews-grid {
+            .reasons-grid,
+            .testimonials-grid,
+            .steps-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
 
-            .contact-container {
-                grid-template-columns: 1fr;
+            .about-content {
+                padding: 2.5rem;
+            }
+
+            .contact-form,
+            .contact-info {
+                padding: 2.5rem;
             }
 
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 2.5rem;
                 text-align: center;
-            }
-
-            .btn-primary, .btn-secondary {
-                width: 100%;
-                max-width: 350px;
-            }
-
-            .trust-badges {
-                gap: 1.5rem;
             }
         }
 
@@ -829,27 +1047,9 @@
                 font-size: 2rem;
             }
 
-            .trust-badges {
-                flex-direction: column;
-                align-items: center;
+            .section-title {
+                font-size: 1.75rem;
             }
-
-            .trust-badge {
-                width: 100%;
-                max-width: 300px;
-            }
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
     </style>
 </head>
@@ -857,295 +1057,399 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <div class="logo-section">
-                <a href="#" class="logo">🔧 Crawford Plumbing</a>
-                <span class="logo-tagline">Expert Plumbing Services in Omaha</span>
+            <div class="logo-wrapper">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🔧</span>
+                    Crawford Plumbing
+                </a>
+                <span class="logo-subtext">Licensed Master Plumber • 32+ Years Experience</span>
             </div>
             <button class="mobile-menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
             <nav id="mainNav">
-                <a href="#home">Home</a>
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Us</a>
+                <a href="#about">About</a>
                 <a href="#testimonials">Reviews</a>
-                <a href="#contact">Contact</a>
-                <a href="tel:4025258599" class="call-btn">📞 (402) 525-8599</a>
+                <a href="#contact" class="btn-call">📞 (402) 525-8599</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-content">
-            <div class="hero-badge">⚡ 24/7 EMERGENCY SERVICE AVAILABLE</div>
-            <h1>Expert Plumbing Services You Can Trust</h1>
-            <p class="subheadline">Fast, Reliable, Professional Plumbers Serving Omaha, NE</p>
-            <div class="cta-buttons">
-                <a href="tel:4025258599" class="btn-primary">📞 Call Now: (402) 525-8599</a>
-                <a href="#contact" class="btn-secondary">Schedule Service</a>
+            <div class="hero-badge">
+                <span>🚨</span>
+                <span>24/7 EMERGENCY PLUMBING SERVICE</span>
+            </div>
+            <h1>Honest Plumbing Services You Can Trust</h1>
+            <p class="subheadline">Family-owned and serving Hickman, NE with integrity and expertise for over 32 years</p>
+            <div class="hero-cta">
+                <a href="tel:4025258599" class="btn btn-primary">
+                    <span>📞</span>
+                    <span>Call Now: (402) 525-8599</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>📧</span>
+                    <span>Get Free Estimate</span>
+                </a>
             </div>
             <div class="trust-badges">
                 <div class="trust-badge">
-                    <span class="check">✓</span>
-                    <span>Licensed & Insured</span>
+                    <span class="trust-badge-icon">✓</span>
+                    <span>Licensed Master Plumber</span>
                 </div>
                 <div class="trust-badge">
-                    <span class="check">✓</span>
-                    <span>Same-Day Service</span>
+                    <span class="trust-badge-icon">✓</span>
+                    <span>32+ Years Experience</span>
                 </div>
                 <div class="trust-badge">
-                    <span class="check">✓</span>
+                    <span class="trust-badge-icon">✓</span>
                     <span>Upfront Pricing</span>
                 </div>
                 <div class="trust-badge">
-                    <span class="check">✓</span>
-                    <span>100% Satisfaction</span>
+                    <span class="trust-badge-icon">✓</span>
+                    <span>Family Owned & Operated</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="fade-in">
-        <h2 class="section-title">Our Plumbing Services</h2>
-        <p class="section-subtitle">Comprehensive plumbing solutions for every need</p>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">🚿</span>
-                <h3>Drain Cleaning & Repair</h3>
-                <p>Fast and effective drain cleaning for clogs, slow drains, and sewer line issues. We use advanced tools to clear even the toughest blockages quickly.</p>
+    <section id="services" class="fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Complete Plumbing Solutions</h2>
+                <p class="section-subtitle">From routine maintenance to emergency repairs, we handle all your residential and commercial plumbing needs with expertise and care.</p>
             </div>
 
-            <div class="service-card">
-                <span class="service-icon">🔥</span>
-                <h3>Water Heater Services</h3>
-                <p>Installation, repair, and maintenance of all water heater types. From traditional tanks to tankless systems, we keep your hot water flowing.</p>
-            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🔥</span>
+                    <h3>Water Heater Services</h3>
+                    <p>Expert installation, repair, and maintenance for all types of water heaters. We'll keep your hot water flowing reliably, whether you need a new unit or quick repairs.</p>
+                </div>
 
-            <div class="service-card">
-                <span class="service-icon">💧</span>
-                <h3>Leak Detection & Repair</h3>
-                <p>Expert leak detection and repair to prevent water damage. We find and fix leaks in pipes, faucets, toilets, and fixtures throughout your property.</p>
-            </div>
+                <div class="service-card">
+                    <span class="service-icon">🚿</span>
+                    <h3>Drain Cleaning</h3>
+                    <p>Professional drain cleaning services to clear clogs and keep your plumbing flowing smoothly. We use proven techniques to handle even the toughest blockages.</p>
+                </div>
 
-            <div class="service-card">
-                <span class="service-icon">🚽</span>
-                <h3>Toilet Repair & Installation</h3>
-                <p>Complete toilet services including repairs, replacements, and new installations. We handle running toilets, clogs, leaks, and full upgrades.</p>
-            </div>
+                <div class="service-card">
+                    <span class="service-icon">🔧</span>
+                    <h3>Fixture Installation & Repair</h3>
+                    <p>Professional installation and repair of faucets, sinks, toilets, and all plumbing fixtures. Quality workmanship that looks great and lasts for years.</p>
+                </div>
 
-            <div class="service-card">
-                <span class="service-icon">🔧</span>
-                <h3>Pipe Repair & Replacement</h3>
-                <p>Professional pipe services for burst pipes, corrosion, and complete repiping. We work with all pipe materials and ensure lasting solutions.</p>
-            </div>
+                <div class="service-card">
+                    <span class="service-icon">💧</span>
+                    <h3>Leak Detection & Repair</h3>
+                    <p>Advanced leak detection services to find and fix leaks before they cause major damage. We protect your property and save you money on water bills.</p>
+                </div>
 
-            <div class="service-card">
-                <span class="service-icon">🏠</span>
-                <h3>Fixture Installation</h3>
-                <p>Install new faucets, sinks, garbage disposals, and plumbing fixtures. Upgrade your home with modern, efficient plumbing fixtures.</p>
-            </div>
+                <div class="service-card">
+                    <span class="service-icon">🏗️</span>
+                    <h3>Remodeling Plumbing</h3>
+                    <p>Complete plumbing services for your kitchen or bathroom remodel. We work seamlessly with your renovation plans to deliver beautiful, functional results.</p>
+                </div>
 
-            <div class="service-card">
-                <span class="service-icon">🚨</span>
-                <h3>Emergency Plumbing</h3>
-                <p>24/7 emergency plumbing service when you need it most. We respond quickly to burst pipes, major leaks, and urgent plumbing crises.</p>
-            </div>
+                <div class="service-card">
+                    <span class="service-icon">🚽</span>
+                    <h3>Sewer Line Services</h3>
+                    <p>Expert sewer line inspection, cleaning, and repair using professional equipment. We diagnose issues accurately and provide lasting solutions.</p>
+                </div>
 
-            <div class="service-card">
-                <span class="service-icon">⚙️</span>
-                <h3>Sewer Line Services</h3>
-                <p>Comprehensive sewer line inspection, cleaning, and repair. We use camera inspection to diagnose issues and provide effective solutions.</p>
+                <div class="service-card">
+                    <span class="service-icon">🏢</span>
+                    <h3>Commercial Plumbing</h3>
+                    <p>Reliable commercial plumbing services for businesses of all sizes. We minimize downtime and keep your operations running smoothly.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="service-icon">🚨</span>
+                    <h3>24/7 Emergency Service</h3>
+                    <p>Round-the-clock emergency plumbing service when you need it most. We respond quickly to minimize damage and restore your plumbing fast.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section id="why-us" class="fade-in">
-        <h2 class="section-title">Why Choose Crawford Plumbing?</h2>
-        <p class="section-subtitle">Experience the Crawford difference</p>
-
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="feature-icon">⚡</span>
-                <h3>Fast Response Time</h3>
-                <p>We understand plumbing emergencies can't wait. Our team responds quickly, often providing same-day service to get your plumbing back on track.</p>
+    <section id="why-us" class="section-alt fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">The Crawford Difference</h2>
+                <p class="section-subtitle">Three decades of honest service have built our reputation as Hickman's most trusted plumbing company.</p>
             </div>
 
-            <div class="feature-card">
-                <span class="feature-icon">🎓</span>
-                <h3>Expert Technicians</h3>
-                <p>Our licensed, experienced plumbers have seen it all. We bring years of expertise and ongoing training to every job, big or small.</p>
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <span class="reason-icon">👨‍🔧</span>
+                    <h3>32+ Years Experience</h3>
+                    <p>Pat Crawford brings over three decades of plumbing expertise to every job. As a licensed master plumber, he's seen it all and knows how to do it right the first time.</p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">🤝</span>
+                    <h3>Honest, Upfront Pricing</h3>
+                    <p>No surprises, no hidden fees. We provide clear estimates before we start work so you know exactly what to expect. Our reputation is built on transparency and integrity.</p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">🏡</span>
+                    <h3>Family Owned & Local</h3>
+                    <p>We're your neighbors in Hickman, not a faceless corporation. When you call Crawford Plumbing, you get personalized service from people who care about the community.</p>
+                </div>
+
+                <div class="reason-card">
+                    <span class="reason-icon">⚡</span>
+                    <h3>Fast, Reliable Service</h3>
+                    <p>We respect your time and your property. Our prompt service and clean workmanship mean less disruption to your day and peace of mind for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">About Us</span>
+                <h2 class="section-title">Your Trusted Local Plumber</h2>
             </div>
 
-            <div class="feature-card">
-                <span class="feature-icon">💯</span>
-                <h3>Quality Workmanship</h3>
-                <p>We take pride in doing the job right the first time. Quality materials, expert installation, and attention to detail are our standards.</p>
-            </div>
+            <div class="about-content">
+                <div class="about-header">
+                    <h3>Crawford Plumbing</h3>
+                    <span class="owner-badge">Pat Crawford - Licensed Master Plumber</span>
+                </div>
 
-            <div class="feature-card">
-                <span class="feature-icon">💰</span>
-                <h3>Transparent Pricing</h3>
-                <p>No surprises on your bill. We provide upfront estimates before we start work, so you know exactly what to expect.</p>
-            </div>
+                <div class="about-text">
+                    <p>For over 32 years, Crawford Plumbing has been the name Hickman residents trust for honest, reliable plumbing services. Founded and operated by Pat Crawford, a licensed master plumber with decades of hands-on experience, we've built our business on integrity, quality workmanship, and genuine care for our customers.</p>
 
-            <div class="feature-card">
-                <span class="feature-icon">🛡️</span>
-                <h3>Fully Licensed & Insured</h3>
-                <p>Your peace of mind is important. We're fully licensed and insured, protecting you and your property on every job.</p>
-            </div>
+                    <p>What started as a one-man operation has grown through word-of-mouth recommendations from satisfied customers who appreciate our straightforward approach. We believe in doing the job right, pricing fairly, and treating every home and business like it's our own. That philosophy has earned us a reputation as the go-to plumber in Hickman and surrounding areas.</p>
 
-            <div class="feature-card">
-                <span class="feature-icon">⭐</span>
-                <h3>Customer Satisfaction</h3>
-                <p>Your satisfaction is our priority. We don't consider a job done until you're completely happy with the results.</p>
+                    <p>We're not a big corporation with call centers and salespeople. When you call Crawford Plumbing, you're talking directly to people who will do the work. We take the time to explain your options, answer your questions, and make sure you're comfortable with the solution before we start. <strong>That's the Crawford Plumbing difference – honest service from people who genuinely care.</strong></p>
+
+                    <p><strong>Whether you need a simple repair or a complete plumbing installation, we bring the same commitment to quality and honesty to every job.</strong> We're available 24/7 for emergencies because plumbing problems don't wait for business hours. Give us a call – we'd be honored to serve you.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="fade-in">
-        <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-subtitle">Real reviews from satisfied Omaha residents</p>
-
-        <div class="reviews-grid">
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Had a burst pipe emergency at 11 PM and Crawford Plumbing was at my house within 30 minutes! They fixed the problem quickly and professionally. The pricing was fair even for emergency service. Highly recommend!"</p>
-                <p class="reviewer-name">— Sarah M.</p>
-                <p class="reviewer-location">Omaha, NE</p>
+    <section id="testimonials" class="section-alt fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonials</span>
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Don't just take our word for it – hear from neighbors who've trusted us with their plumbing needs.</p>
             </div>
 
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"We needed a new water heater installed and Crawford Plumbing did an outstanding job. They explained all our options, installed a high-efficiency tankless unit, and cleaned up perfectly. Best plumbers in Omaha!"</p>
-                <p class="reviewer-name">— Mike and Jennifer R.</p>
-                <p class="reviewer-location">Omaha, NE</p>
-            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Pat responded to our emergency call at 9 PM on a Friday and had our water heater fixed within an hour. He was professional, fair-priced, and genuinely helpful. This is the kind of honest service you rarely find anymore. Highly recommend Crawford Plumbing!"</p>
+                    <div class="testimonial-author">Robert & Linda S.</div>
+                    <div class="testimonial-location">Hickman, NE</div>
+                </div>
 
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Honest, reliable, and professional. They diagnosed our sewer line issue with a camera inspection and fixed it without unnecessary upselling. The price was exactly what they quoted. Finally found a plumber I can trust!"</p>
-                <p class="reviewer-name">— David T.</p>
-                <p class="reviewer-location">Omaha, NE</p>
-            </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"We've been using Crawford Plumbing for over 10 years. Pat installed all the plumbing in our bathroom remodel and it's held up perfectly. He's honest, his prices are fair, and he does quality work. We won't call anyone else."</p>
+                    <div class="testimonial-author">Mike T.</div>
+                    <div class="testimonial-location">Hickman, NE</div>
+                </div>
 
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Crawford Plumbing has handled all our plumbing needs for the past 3 years. From small repairs to major installations, they're always prompt, professional, and their work is top-notch. Wouldn't call anyone else!"</p>
-                <p class="reviewer-name">— Lisa and Robert K.</p>
-                <p class="reviewer-location">Omaha, NE</p>
-            </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Had a stubborn drain clog that other plumbers couldn't fix. Pat knew exactly what to do and had it flowing perfectly in no time. He explained everything clearly and the price was exactly what he quoted. Great experience from start to finish!"</p>
+                    <div class="testimonial-author">Jennifer M.</div>
+                    <div class="testimonial-location">Hickman, NE</div>
+                </div>
 
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Bathroom renovation required all new plumbing fixtures. Crawford Plumbing installed everything beautifully and even gave suggestions that saved us money. Very knowledgeable team and great customer service!"</p>
-                <p class="reviewer-name">— Amanda S.</p>
-                <p class="reviewer-location">Omaha, NE</p>
-            </div>
-
-            <div class="review-card">
-                <div class="stars">★★★★★</div>
-                <p class="review-text">"Had persistent drain issues that other plumbers couldn't solve. Crawford Plumbing found the root cause and fixed it permanently. That was 2 years ago and we haven't had a problem since. True professionals!"</p>
-                <p class="reviewer-name">— James W.</p>
-                <p class="reviewer-location">Omaha, NE</p>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="testimonial-text">"Crawford Plumbing handles all our commercial properties. Pat is reliable, professional, and his work is always top-notch. When you run a business, you need someone you can count on – that's Pat Crawford. Couldn't recommend him more highly."</p>
+                    <div class="testimonial-author">David K.</div>
+                    <div class="testimonial-location">Property Manager, Hickman Area</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="fade-in">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="section-subtitle">We're here to help with all your plumbing needs</p>
+    <!-- How It Works Section -->
+    <section class="fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">How It Works</span>
+                <h2 class="section-title">Simple, Straightforward Service</h2>
+                <p class="section-subtitle">Getting your plumbing fixed shouldn't be complicated. Here's our simple process.</p>
+            </div>
 
-        <div class="contact-intro">
-            <div class="emergency-banner">
-                <h3>🚨 Need Emergency Plumbing Service?</h3>
-                <p>We're available 24/7 for plumbing emergencies</p>
-                <a href="tel:4025258599" class="big-call-btn">📞 Call Now: (402) 525-8599</a>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Call or Email Us</h3>
+                    <p>Contact us at (402) 525-8599 or crawfordplumbing@gmail.com. We'll discuss your plumbing needs and schedule a convenient time.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>We Assess the Problem</h3>
+                    <p>We'll come to your property, evaluate the situation, and explain exactly what needs to be done. No jargon, just straight talk.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Upfront Quote</h3>
+                    <p>You'll get a clear, honest price quote before we start any work. No hidden fees, no surprises – just transparent pricing.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Quality Work Done Right</h3>
+                    <p>We complete the job efficiently with quality workmanship. You get reliable plumbing that lasts, backed by our commitment to your satisfaction.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="contact-container">
-            <div class="contact-form">
-                <h3>Schedule a Service</h3>
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Your Name *</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="service">Service Needed</label>
-                        <select id="service" name="service">
-                            <option value="">Select a service...</option>
-                            <option value="drain">Drain Cleaning</option>
-                            <option value="water-heater">Water Heater</option>
-                            <option value="leak">Leak Repair</option>
-                            <option value="toilet">Toilet Service</option>
-                            <option value="pipe">Pipe Repair</option>
-                            <option value="fixture">Fixture Installation</option>
-                            <option value="emergency">Emergency Service</option>
-                            <option value="sewer">Sewer Line</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Describe Your Plumbing Issue *</label>
-                        <textarea id="message" name="message" required placeholder="Please describe the plumbing problem or service you need..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+    <!-- FAQ Section -->
+    <section class="section-alt fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
             </div>
 
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-
-                <div class="contact-info-item">
-                    <span class="icon">📞</span>
-                    <div>
-                        <strong>Phone</strong><br>
-                        <a href="tel:4025258599">(402) 525-8599</a><br>
-                        <small>Available 24/7 for emergencies</small>
-                    </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Do you offer free estimates?</div>
+                    <div class="faq-answer">Yes, we provide free estimates for most plumbing projects. We'll assess your needs and give you a clear, upfront quote before starting any work. For emergency calls, we'll discuss pricing when we arrive so you can make an informed decision.</div>
                 </div>
 
-                <div class="contact-info-item">
-                    <span class="icon">📍</span>
-                    <div>
-                        <strong>Service Area</strong><br>
-                        Omaha, NE<br>
-                        and surrounding areas
-                    </div>
+                <div class="faq-item">
+                    <div class="faq-question">What areas do you serve?</div>
+                    <div class="faq-answer">We're based in Hickman, NE and serve Hickman and the surrounding areas. If you're unsure whether we cover your location, give us a call at (402) 525-8599 and we'll let you know.</div>
                 </div>
 
-                <div class="contact-info-item">
-                    <span class="icon">🕐</span>
-                    <div>
-                        <strong>Hours</strong><br>
-                        Mon-Fri: 7:00 AM - 7:00 PM<br>
-                        Sat: 8:00 AM - 5:00 PM<br>
-                        Sun: Emergency Service Only<br>
-                        <strong>24/7 Emergency Service</strong>
-                    </div>
+                <div class="faq-item">
+                    <div class="faq-question">Are you available for emergencies?</div>
+                    <div class="faq-answer">Absolutely. We offer 24/7 emergency plumbing service because we know that burst pipes, water heater failures, and other plumbing emergencies don't wait for business hours. Call us anytime at (402) 525-8599.</div>
                 </div>
 
-                <div class="reassurance">
-                    <strong>Free Estimates Available</strong><br>
-                    We provide free, no-obligation estimates for most services. Call us today to discuss your plumbing needs and get a transparent quote.
+                <div class="faq-item">
+                    <div class="faq-question">Are you licensed and insured?</div>
+                    <div class="faq-answer">Yes, Pat Crawford is a licensed master plumber, and Crawford Plumbing is fully insured. You can trust that your plumbing work is being done by a qualified professional who takes responsibility for quality results.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do you handle both residential and commercial work?</div>
+                    <div class="faq-answer">Yes, we provide plumbing services for both residential homes and commercial businesses. From a leaky faucet at home to commercial plumbing installations, we have the experience to handle projects of all sizes.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">We accept cash, checks, and major credit cards. Payment is due upon completion of work unless other arrangements have been made in advance for larger projects.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/CTA Section -->
+    <section id="contact" class="contact-cta fade-in-up">
+        <div class="contact-cta-content">
+            <div class="emergency-banner">
+                <h3>🚨 Plumbing Emergency? We're Here 24/7</h3>
+                <p>Don't wait – call now for fast, reliable emergency service</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Get Your Free Estimate</h3>
+                    <form onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Type of Service</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="water-heater">Water Heater</option>
+                                <option value="drain-cleaning">Drain Cleaning</option>
+                                <option value="leak-repair">Leak Repair</option>
+                                <option value="fixture">Fixture Installation/Repair</option>
+                                <option value="remodel">Remodeling Plumbing</option>
+                                <option value="sewer">Sewer Line</option>
+                                <option value="commercial">Commercial Plumbing</option>
+                                <option value="emergency">Emergency Service</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Describe Your Plumbing Need *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us about your plumbing issue or project..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <div class="contact-info-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <strong>Phone</strong><br>
+                            <a href="tel:4025258599">(402) 525-8599</a><br>
+                            <small style="color: var(--light-gray);">24/7 for emergencies</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="icon">📧</span>
+                        <div>
+                            <strong>Email</strong><br>
+                            <a href="mailto:crawfordplumbing@gmail.com">crawfordplumbing@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <strong>Address</strong><br>
+                            Box 227<br>
+                            Hickman, NE 68372
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item">
+                        <span class="icon">🕐</span>
+                        <div>
+                            <strong>Service Hours</strong><br>
+                            24/7 Emergency Service<br>
+                            Standard Hours: Mon-Sat<br>
+                            <small style="color: var(--light-gray);">Call anytime for emergencies</small>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1156,42 +1460,44 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Crawford Plumbing</h3>
-                <p>Your trusted plumbing experts serving Omaha, NE and surrounding areas. Professional, reliable plumbing services for residential and commercial properties.</p>
-                <p style="margin-top: 1rem;"><strong>Licensed, Insured & Trusted</strong></p>
+                <p>Family-owned and serving Hickman, NE with honest, reliable plumbing services for over 32 years.</p>
+                <p style="margin-top: 1rem;"><strong>Licensed Master Plumber</strong></p>
+                <p><strong>Box 227, Hickman, NE 68372</strong></p>
             </div>
 
             <div class="footer-section">
                 <h3>Our Services</h3>
-                <a href="#services">Drain Cleaning & Repair</a>
                 <a href="#services">Water Heater Services</a>
+                <a href="#services">Drain Cleaning</a>
                 <a href="#services">Leak Detection & Repair</a>
-                <a href="#services">Toilet Repair & Installation</a>
-                <a href="#services">Pipe Repair & Replacement</a>
-                <a href="#services">Emergency Plumbing</a>
+                <a href="#services">Fixture Installation & Repair</a>
+                <a href="#services">Remodeling Plumbing</a>
+                <a href="#services">Sewer Line Services</a>
+                <a href="#services">Commercial Plumbing</a>
+                <a href="#services">24/7 Emergency Service</a>
             </div>
 
             <div class="footer-section">
                 <h3>Quick Links</h3>
-                <a href="#home">Home</a>
                 <a href="#services">Services</a>
                 <a href="#why-us">Why Choose Us</a>
+                <a href="#about">About Pat Crawford</a>
                 <a href="#testimonials">Customer Reviews</a>
                 <a href="#contact">Contact Us</a>
             </div>
 
             <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>📞 <a href="tel:4025258599">(402) 525-8599</a></p>
-                <p>📍 Omaha, Nebraska</p>
-                <p>🚨 24/7 Emergency Service</p>
-                <p style="margin-top: 1rem;">
-                    <a href="tel:4025258599" style="background: var(--orange); padding: 0.8rem 1.5rem; border-radius: 25px; display: inline-block; margin-top: 0.5rem;">Call Now</a>
-                </p>
+                <h3>Get In Touch</h3>
+                <p><strong>Phone:</strong></p>
+                <p><a href="tel:4025258599" style="font-size: 1.2rem; color: var(--orange);">(402) 525-8599</a></p>
+                <p style="margin-top: 1rem;"><strong>Email:</strong></p>
+                <p><a href="mailto:crawfordplumbing@gmail.com">crawfordplumbing@gmail.com</a></p>
+                <p style="margin-top: 1rem;"><strong>🚨 24/7 Emergency Service Available</strong></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p>&copy; 2025 Crawford Plumbing - Omaha, NE. All rights reserved. | Licensed & Insured</p>
+            <p>&copy; 2025 Crawford Plumbing - Hickman, NE. All rights reserved. | Licensed Master Plumber | 32+ Years of Trusted Service</p>
         </div>
     </footer>
 
@@ -1202,14 +1508,7 @@
             nav.classList.toggle('active');
         }
 
-        // Form submission handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            alert('Thank you for your message! We\'ll contact you shortly. For immediate assistance, please call us at (402) 525-8599.');
-            event.target.reset();
-        }
-
-        // Close mobile menu when clicking on a link
+        // Close mobile menu when clicking a link
         document.querySelectorAll('nav a').forEach(link => {
             link.addEventListener('click', () => {
                 const nav = document.getElementById('mainNav');
@@ -1217,24 +1516,46 @@
             });
         });
 
-        // Smooth scroll behavior
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Scroll animations
+        // Form submission handler
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (name && phone && email && message) {
+                alert(`Thank you, ${name}! We've received your message and will contact you shortly at ${phone}. For immediate assistance, please call us at (402) 525-8599.`);
+                event.target.reset();
+            }
+        }
+
+        // Scroll animation observer
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
@@ -1245,18 +1566,15 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.fade-in').forEach(element => {
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in-up').forEach(element => {
             observer.observe(element);
         });
 
-        // Add floating animation to CTA buttons
-        const ctaButtons = document.querySelectorAll('.btn-primary');
-        ctaButtons.forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.animation = 'none';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 10);
+        // Add smooth hover effect to cards
+        document.querySelectorAll('.service-card, .reason-card, .testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             });
         });
     </script>
